@@ -97,14 +97,16 @@
 
 	
 ### 登录页面
-![](http://7xqbwh.dl1.z0.glb.clouddn.com/20171212/21131417147fdb.png "登录")
+![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/13484892802ad2.png "登录")
 ### 首页
-![](http://7xqbwh.dl1.z0.glb.clouddn.com/20171124/0040351224717d.png "首页")
+![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/134920465c011b.png "首页")
+### 菜单管理
+![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/135042481d1b4e.png "菜单管理")
 ### 多系统切换
-![](http://7xqbwh.dl1.z0.glb.clouddn.com/20171124/00384448918539.png "多系统切换")
+![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/134937754189a3.png "多系统切换")
 ### 角色授权
-![](http://7xqbwh.dl1.z0.glb.clouddn.com/20171124/0040593234231c.png "角色授权")
+![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/13495698447ff5.png "角色授权")
 ### 短信发送
-![](http://7xqbwh.dl1.z0.glb.clouddn.com/20180208/15333527921893.png "短信发送")
+![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/1350145323d71d.png "短信发送")
 ### 捐赠
-![](http://7xqbwh.dl1.z0.glb.clouddn.com/20171124/0041155051171d.png "捐赠")
+![](https://platform-wxmall.oss-cn-beijing.aliyuncs.com/upload/20180618/13505517181d30.png "捐赠")
