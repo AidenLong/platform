@@ -13,6 +13,7 @@
         velocity1.7
         quartz2.2.3
         mysql5.1.39
+        swagger2.4
         
     前端使用技术
         Vue2.5.1
@@ -26,17 +27,17 @@
     platform-admin 
     后台管理
 
-    platform-restful 
-    提供REST风格接口
-
     platform-common 
     公共模块
-
+    
     platform-framework 
     系统WEB合并模块
     
     platform-gen 
     代码生成
+
+    platform-restful 
+    提供REST风格接口
 
     platform-schedule 
     定时任务
@@ -44,9 +45,6 @@
     platform-shiro 
     登陆权限相关
     
-    platform-vue 
-    前端项目
-
     实现功能
 
     一：综合管理系统
@@ -61,6 +59,7 @@
         
         SQL监控
         代码生成器
+        swagger接口列表
         
         定时任务
         
