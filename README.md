@@ -41,9 +41,6 @@
 
     platform-schedule 
     定时任务
-
-    platform-shiro 
-    登陆权限相关
     
     实现功能
 

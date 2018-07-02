@@ -12,7 +12,6 @@
     <module>platform-framework</module>
     <module>platform-gen</module>
     <module>platform-schedule</module>
-    <module>platform-shiro</module>
     <module>platform-common</module>
     <module>platform-restful</module>
     <module>platform-admin</module>
