@@ -169,7 +169,7 @@ var vm = new Vue({
         add: function () {
             vm.showList = false;
             vm.title = "新增";
-            var menuId = TreeGrid.table.getSelections();
+            var menuId = TreeGrid.table.getSelectedRow();
             var parentId = 0;
             if (menuId.length != 0) {
                 parentId = menuId[0].id;
@@ -179,7 +179,7 @@ var vm = new Vue({
             vm.getDomains();
         },
         update: function (event) {
-            var menuId = TreeGrid.table.getSelections();
+            var menuId = TreeGrid.table.getSelectedRow();
             if (menuId.length == 0) {
                 iview.Message.error("请选择一条记录");
                 return;
@@ -199,7 +199,7 @@ var vm = new Vue({
             });
         },
         del: function (event) {
-            var menuIds = TreeGrid.table.getSelections(), ids = [];
+            var menuIds = TreeGrid.table.getSelectedRow(), ids = [];
             if (menuIds.length == 0) {
                 iview.Message.error("请选择一条记录");
                 return;

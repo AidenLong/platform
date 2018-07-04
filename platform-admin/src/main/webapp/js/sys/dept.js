@@ -96,7 +96,7 @@ var vm = new Vue({
         add: function () {
             vm.showList = false;
             vm.title = "新增";
-            var deptId = TreeGrid.table.getSelections();
+            var deptId = TreeGrid.table.getSelectedRow();
             var parentId = '01';
             if (deptId.length != 0) {
                 parentId = deptId[0].id;

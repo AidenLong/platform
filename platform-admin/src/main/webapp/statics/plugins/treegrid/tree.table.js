@@ -144,7 +144,7 @@
         /**
          * 获取选中行
          */
-        getSelections: function () {
+        getSelectedRow: function () {
             return this.btInstance.bootstrapTreeTable('getSelections');
         }
     };
