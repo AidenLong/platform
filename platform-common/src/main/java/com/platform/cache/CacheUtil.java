@@ -16,13 +16,12 @@ import java.util.List;
  */
 public class CacheUtil implements InitializingBean {
 
-    public static List<SysDictEntity> sysDictEntityList;
     public static SysDictDao sysDictDao;
 
     public static void init() {
         sysDictDao = SpringContextUtils.getBean(SysDictDao.class);
         if (null != sysDictDao) {
-            sysDictEntityList = sysDictDao.queryList(new HashMap<String, Object>());
+            J2CacheUtils.put("sysDictEntityList", sysDictDao.queryList(new HashMap<String, Object>()));
         }
     }
 
@@ -30,7 +29,7 @@ public class CacheUtil implements InitializingBean {
      * 重新加载数据字典缓存
      */
     public static void reloadDict() {
-        sysDictEntityList = sysDictDao.queryList(new HashMap<String, Object>());
+        J2CacheUtils.put("sysDictEntityList", sysDictDao.queryList(new HashMap<String, Object>()));
     }
 
     /**
@@ -41,6 +40,7 @@ public class CacheUtil implements InitializingBean {
      * @return
      */
     public static String getDictValue(String groupCode, String dictKey) {
+        List<SysDictEntity> sysDictEntityList = (List<SysDictEntity>) J2CacheUtils.get("sysDictEntityList");
         if (sysDictEntityList != null && sysDictEntityList.size() != 0) {
             for (SysDictEntity item : sysDictEntityList) {
                 if (groupCode.equals(item.getGroupCode()) && dictKey.equals(item.getDictKey())) {

@@ -43,6 +43,7 @@
     <taglibs-version>1.1.2</taglibs-version>
     <freemarker-version>2.3.23</freemarker-version>
     <kaptcha.version>0.0.9</kaptcha.version>
+    <j2cache.version>2.3.22-release</j2cache.version>
   </properties>
 
   <!-- 阿里云maven仓库 -->
@@ -265,6 +266,11 @@
       <groupId>com.github.axet</groupId>
       <artifactId>kaptcha</artifactId>
       <version>${kaptcha.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.oschina.j2cache</groupId>
+      <artifactId>j2cache-core</artifactId>
+      <version>${j2cache.version}</version>
     </dependency>
   </dependencies>
 

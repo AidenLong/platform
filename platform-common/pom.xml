@@ -125,12 +125,10 @@
         </dependency>
         <!-- POI依赖 ，处理EXCEL WORD  PDF -->
 
-        <!-- EhCache -->
         <dependency>
-            <groupId>net.sf.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>2.10.2</version>
+            <groupId>net.oschina.j2cache</groupId>
+            <artifactId>j2cache-core</artifactId>
+            <version>${j2cache.version}</version>
         </dependency>
-        <!-- EhCache -->
     </dependencies>
 </project>
