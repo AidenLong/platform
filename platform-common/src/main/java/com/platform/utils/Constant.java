@@ -31,6 +31,10 @@ public class Constant {
      * 默认密码
      */
     public static final String DEFAULT_PASS_WORD = "888888";
+    /**
+     * 权限前缀
+     */
+    public static final String PERMS_LIST = "permsList";
 
     /**
      * 菜单类型
