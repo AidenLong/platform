@@ -11,7 +11,13 @@ import java.util.Collection;
  * 描述: J2CacheUtils <br>
  */
 public class J2CacheUtils {
+    /**
+     * 系统缓存
+     */
     private static String SYS_CACHE_NAME = "sysCache";
+    /**
+     * 商城业务缓存
+     */
     private static String SHOP_CACHE_NAME = "shopCache";
 
 
