@@ -5,7 +5,7 @@
 #parse("sys/header.html")
 </head>
 <body>
-<div id="rrapp">
+<div id="sysScheduleLog">
 	<Row :gutter="16">
 		<div class="search-group">
 			<i-col span="4">
@@ -15,7 +15,7 @@
 			<i-button @click="reloadSearch">重置</i-button>
 		</div>
 	</Row>
-    <table id="jqGrid"></table>
+    <table id="sysScheduleLogGrid"></table>
 </div>
 
 <script src="${rc.contextPath}/js/sys/schedule_log.js?_${date.systemTime}"></script>

@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").Grid({
+    $("#sysRoleGrid").Grid({
         url: '../sys/role/list',
         colModel: [
             {label: '角色ID', name: 'roleId', index: "role_id", key: true, hidden: true},
@@ -74,7 +74,7 @@ var data_setting = {
 
 
 var vm = new Vue({
-    el: '#rrapp',
+    el: '#sysRole',
     data: {
         q: {
             roleName: null
@@ -101,7 +101,7 @@ var vm = new Vue({
             vm.getDataTree();
         },
         update: function () {
-            var roleId = getSelectedRow("#jqGrid");
+            var roleId = getSelectedRow("#sysRoleGrid");
             if (roleId == null) {
                 return;
             }
@@ -112,7 +112,7 @@ var vm = new Vue({
             vm.getMenuTree(roleId);
         },
         del: function (event) {
-            var roleIds = getSelectedRows("#jqGrid");
+            var roleIds = getSelectedRows("#sysRoleGrid");
             if (roleIds == null) {
                 return;
             }
@@ -219,7 +219,7 @@ var vm = new Vue({
                 url: "../sys/dept/list",
                 async: true,
                 successCallback: function (r) {
-                    dept_ztree = $.fn.zTree.init($("#deptTree"), dept_setting, r.list);
+                    dept_ztree = $.fn.zTree.init($("#sysRoleTree"), dept_setting, r.list);
                     var node = dept_ztree.getNodeByParam("deptId", vm.role.deptId);
                     if (node != null) {
                         dept_ztree.selectNode(node);
@@ -228,11 +228,11 @@ var vm = new Vue({
                 }
             });
         },
-        deptTree: function () {
+        selectDeptTree: function () {
             openWindow({
                 title: "选择部门",
                 area: ['300px', '450px'],
-                content: jQuery("#deptLayer"),
+                content: jQuery("#sysRoleLayer"),
                 btn: ['确定', '取消'],
                 btn1: function (index) {
                     var node = dept_ztree.getSelectedNodes();
@@ -245,8 +245,8 @@ var vm = new Vue({
         },
         reload: function (event) {
             vm.showList = true;
-            var page = $("#jqGrid").jqGrid('getGridParam', 'page');
-            $("#jqGrid").jqGrid('setGridParam', {
+            var page = $("#sysRoleGrid").jqGrid('getGridParam', 'page');
+            $("#sysRoleGrid").jqGrid('setGridParam', {
                 postData: {'roleName': vm.q.roleName},
                 page: page
             }).trigger("reloadGrid");

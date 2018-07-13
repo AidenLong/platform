@@ -5,7 +5,7 @@
     #parse("sys/header.html")
 </head>
 <body>
-<div id="rrapp">
+<div id="sysGenerator">
     <Row :gutter="16">
         <div class="search-group">
             <i-col span="4">
@@ -18,7 +18,7 @@
             <i-button type="primary" @click="generator"><i class="fa fa-file-code-o"></i>&nbsp;生成代码</i-button>
         </div>
     </Row>
-    <table id="jqGrid"></table>
+    <table id="sysGeneratorGrid"></table>
 </div>
 
 <script src="${rc.contextPath}/js/sys/generator.js?_${date.systemTime}"></script>

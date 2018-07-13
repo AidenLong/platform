@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").Grid({
+    $("#sysSmsLogGrid").Grid({
         url: '../sys/smslog/list',
         colModel: [
             {label: 'id', name: 'id', index: 'id', key: true, hidden: true},
@@ -28,7 +28,7 @@ $(function () {
 });
 
 let vm = new Vue({
-    el: '#rrapp',
+    el: '#sysSmsLog',
     data: {
         showList: true,
         title: null,
@@ -85,8 +85,8 @@ let vm = new Vue({
         },
         reload: function (event) {
             vm.showList = true;
-            let page = $("#jqGrid").jqGrid('getGridParam', 'page');
-            $("#jqGrid").jqGrid('setGridParam', {
+            let page = $("#sysSmsLogGrid").jqGrid('getGridParam', 'page');
+            $("#sysSmsLogGrid").jqGrid('setGridParam', {
                 postData: {'sendId': vm.q.sendId},
                 page: page
             }).trigger("reloadGrid");

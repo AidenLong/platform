@@ -6,7 +6,7 @@
     <script src="${rc.contextPath}/statics/libs/ajaxupload.js"></script>
 </head>
 <body>
-<div id="rrapp" v-cloak>
+<div id="sysOss" v-cloak>
     <div v-show="showList">
         <Row :gutter="16">
             <div class="search-group">
@@ -19,7 +19,7 @@
                 <i-button type="success" @click="lookImg"><i class="fa fa-eye"></i>&nbsp;预览</i-button>
             </div>
         </Row>
-        <table id="jqGrid"></table>
+        <table id="sysOssGrid"></table>
     </div>
 
     <Card v-show="!showList">

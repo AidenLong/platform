@@ -5,7 +5,7 @@
     #parse("sys/header.html")
 </head>
 <body>
-<div id="rrapp" v-cloak>
+<div id="sysDept" v-cloak>
     <div v-show="showList">
         <Row :gutter="16">
             <div class="search-group">
@@ -23,7 +23,7 @@
                 #end
             </div>
         </Row>
-        <table id="jqGrid"></table>
+        <table id="sysDeptGrid"></table>
     </div>
 
     <Card v-show="!showList">
@@ -49,8 +49,8 @@
 </div>
 
 <!-- 选择部门 -->
-<div id="deptLayer" style="display: none;padding:10px;">
-    <ul id="deptTree" class="ztree"></ul>
+<div id="sysDeptLayer" style="display: none;padding:10px;">
+    <ul id="sysDeptTree" class="ztree"></ul>
 </div>
 
 <script src="${rc.contextPath}/js/sys/dept.js?_${date.systemTime}"></script>

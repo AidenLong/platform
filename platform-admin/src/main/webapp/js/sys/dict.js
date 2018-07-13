@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").Grid({
+    $("#sysDictGrid").Grid({
         url: '../sys/dict/list',
         colModel: [
             {label: 'id', name: 'id', index: 'id', key: true, hidden: true},
@@ -11,7 +11,7 @@ $(function () {
 });
 
 let vm = new Vue({
-    el: '#rrapp',
+    el: '#sysDict',
     data: {
         showList: true,
         title: null,
@@ -35,7 +35,7 @@ let vm = new Vue({
             vm.dict = {};
         },
         update: function (event) {
-            let id = getSelectedRow("#jqGrid");
+            let id = getSelectedRow("#sysDictGrid");
             if (id == null) {
                 return;
             }
@@ -59,7 +59,7 @@ let vm = new Vue({
             });
         },
         del: function (event) {
-            let ids = getSelectedRows("#jqGrid");
+            let ids = getSelectedRows("#sysDictGrid");
             if (ids == null) {
                 return;
             }
@@ -89,8 +89,8 @@ let vm = new Vue({
         },
         reload: function (event) {
             vm.showList = true;
-            let page = $("#jqGrid").jqGrid('getGridParam', 'page');
-            $("#jqGrid").jqGrid('setGridParam', {
+            let page = $("#sysDictGrid").jqGrid('getGridParam', 'page');
+            $("#sysDictGrid").jqGrid('setGridParam', {
                 postData: {'groupCode': vm.q.groupCode},
                 page: page
             }).trigger("reloadGrid");

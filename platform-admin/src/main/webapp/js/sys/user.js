@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").Grid({
+    $("#sysUserGrid").Grid({
         url: '../sys/user/list',
         colModel: [
             {label: '用户ID', name: 'userId', index: "user_id", key: true, hidden: true},
@@ -38,7 +38,7 @@ var setting = {
 var ztree;
 
 var vm = new Vue({
-    el: '#rrapp',
+    el: '#sysUser',
     data: {
         q: {
             userName: null
@@ -95,7 +95,7 @@ var vm = new Vue({
             });
         },
         update: function () {
-            var userId = getSelectedRow("#jqGrid");
+            var userId = getSelectedRow("#sysUserGrid");
             if (userId == null) {
                 return;
             }
@@ -116,7 +116,7 @@ var vm = new Vue({
 
         },
         del: function () {
-            var userIds = getSelectedRows("#jqGrid");
+            var userIds = getSelectedRows("#sysUserGrid");
             if (userIds == null) {
                 return;
             }
@@ -160,8 +160,8 @@ var vm = new Vue({
         },
         reload: function (event) {
             vm.showList = true;
-            var page = $("#jqGrid").jqGrid('getGridParam', 'page');
-            $("#jqGrid").jqGrid('setGridParam', {
+            var page = $("#sysUserGrid").jqGrid('getGridParam', 'page');
+            $("#sysUserGrid").jqGrid('setGridParam', {
                 postData: {'userName': vm.q.userName},
                 page: page
             }).trigger("reloadGrid");

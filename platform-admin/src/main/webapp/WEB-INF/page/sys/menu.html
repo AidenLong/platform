@@ -5,7 +5,7 @@
     #parse("sys/header.html")
 </head>
 <body>
-<div id="rrapp" v-cloak>
+<div id="sysMenu" v-cloak>
     <div v-show="showList">
         <Row :gutter="16">
             <div class="search-group">
@@ -23,7 +23,7 @@
                 #end
             </div>
         </Row>
-        <table id="jqGrid"></table>
+        <table id="sysMenuGrid"></table>
     </div>
 
     <Card v-show="!showList">
@@ -92,8 +92,8 @@
 </div>
 
 <!-- 选择菜单 -->
-<div id="menuLayer" style="display: none;padding:10px;">
-    <ul id="menuTree" class="ztree"></ul>
+<div id="sysMenuLayer" style="display: none;padding:10px;">
+    <ul id="sysMenuTree" class="ztree"></ul>
 </div>
 
 <script src="${rc.contextPath}/js/sys/menu.js?_${date.systemTime}"></script>

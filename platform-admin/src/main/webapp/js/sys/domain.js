@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").Grid({
+    $("#sysDomainGrid").Grid({
         url: '../sys/domain/list',
         colModel: [
             {label: 'id', name: 'id', index: 'id', key: true, hidden: true},
@@ -29,7 +29,7 @@ $(function () {
 });
 
 let vm = new Vue({
-    el: '#rrapp',
+    el: '#sysDomain',
     data: {
         showList: true,
         title: null,
@@ -53,7 +53,7 @@ let vm = new Vue({
             vm.domain = {};
         },
         update: function (event) {
-            let id = getSelectedRow("#jqGrid");
+            let id = getSelectedRow("#sysDomainGrid");
             if (id == null) {
                 return;
             }
@@ -77,7 +77,7 @@ let vm = new Vue({
             });
         },
         del: function (event) {
-            let ids = getSelectedRows("#jqGrid");
+            let ids = getSelectedRows("#sysDomainGrid");
             if (ids == null) {
                 return;
             }
@@ -107,8 +107,8 @@ let vm = new Vue({
         },
         reload: function (event) {
             vm.showList = true;
-            let page = $("#jqGrid").jqGrid('getGridParam', 'page');
-            $("#jqGrid").jqGrid('setGridParam', {
+            let page = $("#sysDomainGrid").jqGrid('getGridParam', 'page');
+            $("#sysDomainGrid").jqGrid('setGridParam', {
                 postData: {'domainName': vm.q.domainName},
                 page: page
             }).trigger("reloadGrid");

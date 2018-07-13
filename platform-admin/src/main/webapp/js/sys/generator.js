@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").Grid({
+    $("#sysGeneratorGrid").Grid({
         url: '../sys/generator/list',
         colModel: [
             {label: '表名', name: 'tableName', index: 'table_name', width: 100, key: true},
@@ -15,7 +15,7 @@ $(function () {
 });
 
 var vm = new Vue({
-    el: '#rrapp',
+    el: '#sysGenerator',
     data: {
         q: {
             tableName: null
@@ -23,7 +23,7 @@ var vm = new Vue({
     },
     methods: {
         query: function () {
-            $("#jqGrid").jqGrid('setGridParam', {
+            $("#sysGeneratorGrid").jqGrid('setGridParam', {
                 postData: {'tableName': vm.q.tableName},
                 page: 1
             }).trigger("reloadGrid");
@@ -35,7 +35,7 @@ var vm = new Vue({
             vm.query();
         },
         generator: function () {
-            var tableNames = getSelectedRows("#jqGrid");
+            var tableNames = getSelectedRows("#sysGeneratorGrid");
             if (tableNames == null) {
                 return;
             }

@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").Grid({
+    $("#sysOssGrid").Grid({
         url: '../sys/oss/list',
         colModel: [
             {label: 'id', name: 'id', key: true, hidden: true},
@@ -40,7 +40,7 @@ $(function () {
 });
 
 var vm = new Vue({
-    el: '#rrapp',
+    el: '#sysOss',
     data: {
         showList: true,
         title: null,
@@ -115,7 +115,7 @@ var vm = new Vue({
             });
         },
         del: function () {
-            var ossIds = getSelectedRows("#jqGrid");
+            var ossIds = getSelectedRows("#sysOssGrid");
             if (ossIds == null) {
                 return;
             }
@@ -135,7 +135,7 @@ var vm = new Vue({
             });
         },
         lookImg: function () {
-            var grid = $("#jqGrid");
+            var grid = $("#sysOssGrid");
             var id = grid.jqGrid('getGridParam', 'selrow');//根据点击行获得点击行的id（id为jsonReader: {id: "id" },）
             if (!id) {
                 alert("请选择一条记录");
@@ -154,8 +154,8 @@ var vm = new Vue({
         },
         reload: function () {
             vm.showList = true;
-            var page = $("#jqGrid").jqGrid('getGridParam', 'page');
-            $("#jqGrid").jqGrid('setGridParam', {
+            var page = $("#sysOssGrid").jqGrid('getGridParam', 'page');
+            $("#sysOssGrid").jqGrid('setGridParam', {
                 page: page
             }).trigger("reloadGrid");
         },

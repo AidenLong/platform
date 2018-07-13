@@ -5,7 +5,7 @@
     #parse("sys/header.html")
 </head>
 <body>
-<div id="rrapp" v-cloak>
+<div id="sysDict" v-cloak>
     <div v-show="showList">
         <Row :gutter="16">
             <div class="search-group">
@@ -27,7 +27,7 @@
                 #end
             </div>
         </Row>
-        <table id="jqGrid"></table>
+        <table id="sysDictGrid"></table>
     </div>
 
     <Card v-show="!showList">

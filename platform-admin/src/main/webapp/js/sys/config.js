@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").Grid({
+    $("#sysConfigGrid").Grid({
         url: '../sys/config/list',
         colModel: [
             {label: 'ID', name: 'id', key: true, hidden: true},
@@ -11,7 +11,7 @@ $(function () {
 });
 
 var vm = new Vue({
-    el: '#rrapp',
+    el: '#sysConfig',
     data: {
         q: {
             confKey: null
@@ -38,7 +38,7 @@ var vm = new Vue({
             vm.config = {};
         },
         update: function () {
-            var id = getSelectedRow("#jqGrid");
+            var id = getSelectedRow("#sysConfigGrid");
             if (id == null) {
                 return;
             }
@@ -54,7 +54,7 @@ var vm = new Vue({
             });
         },
         del: function (event) {
-            var ids = getSelectedRows("#jqGrid");
+            var ids = getSelectedRows("#sysConfigGrid");
             if (ids == null) {
                 return;
             }
@@ -89,8 +89,8 @@ var vm = new Vue({
         },
         reload: function (event) {
             vm.showList = true;
-            var page = $("#jqGrid").jqGrid('getGridParam', 'page');
-            $("#jqGrid").jqGrid('setGridParam', {
+            var page = $("#sysConfigGrid").jqGrid('getGridParam', 'page');
+            $("#sysConfigGrid").jqGrid('setGridParam', {
                 postData: {'confKey': vm.q.confKey},
                 page: page
             }).trigger("reloadGrid");

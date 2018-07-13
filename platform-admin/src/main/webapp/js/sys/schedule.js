@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").Grid({
+    $("#sysScheduleGrid").Grid({
         url: '../sys/schedule/list',
         colModel: [
             {label: '任务ID', name: 'jobId', index: 'job_id', width: 60, key: true},
@@ -20,7 +20,7 @@ $(function () {
 });
 
 var vm = new Vue({
-    el: '#rrapp',
+    el: '#sysSchedule',
     data: {
         q: {
             beanName: null
@@ -50,7 +50,7 @@ var vm = new Vue({
             vm.schedule = {};
         },
         update: function () {
-            var jobId = getSelectedRow("#jqGrid");
+            var jobId = getSelectedRow("#sysScheduleGrid");
             if (jobId == null) {
                 return;
             }
@@ -80,7 +80,7 @@ var vm = new Vue({
             });
         },
         del: function (event) {
-            var jobIds = getSelectedRows("#jqGrid");
+            var jobIds = getSelectedRows("#sysScheduleGrid");
             if (jobIds == null) {
                 return;
             }
@@ -100,7 +100,7 @@ var vm = new Vue({
             });
         },
         pause: function (event) {
-            var jobIds = getSelectedRows("#jqGrid");
+            var jobIds = getSelectedRows("#sysScheduleGrid");
             if (jobIds == null) {
                 return;
             }
@@ -120,7 +120,7 @@ var vm = new Vue({
             });
         },
         resume: function (event) {
-            var jobIds = getSelectedRows("#jqGrid");
+            var jobIds = getSelectedRows("#sysScheduleGrid");
             if (jobIds == null) {
                 return;
             }
@@ -140,7 +140,7 @@ var vm = new Vue({
             });
         },
         runOnce: function (event) {
-            var jobIds = getSelectedRows("#jqGrid");
+            var jobIds = getSelectedRows("#sysScheduleGrid");
             if (jobIds == null) {
                 return;
             }
@@ -161,8 +161,8 @@ var vm = new Vue({
         },
         reload: function (event) {
             vm.showList = true;
-            var page = $("#jqGrid").jqGrid('getGridParam', 'page');
-            $("#jqGrid").jqGrid('setGridParam', {
+            var page = $("#sysScheduleGrid").jqGrid('getGridParam', 'page');
+            $("#sysScheduleGrid").jqGrid('setGridParam', {
                 postData: {'beanName': vm.q.beanName},
                 page: page
             }).trigger("reloadGrid");

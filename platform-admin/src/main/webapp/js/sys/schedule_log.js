@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").Grid({
+    $("#sysScheduleLogGrid").Grid({
         url: '../sys/scheduleLog/list',
         colModel: [
             {label: '日志ID', name: 'logId', index: 'log_id', key: true, hidden: true},
@@ -39,7 +39,7 @@ $(function () {
 });
 
 var vm = new Vue({
-    el: '#rrapp',
+    el: '#sysScheduleLog',
     data: {
         q: {
             jobId: null
@@ -47,7 +47,7 @@ var vm = new Vue({
     },
     methods: {
         query: function () {
-            $("#jqGrid").jqGrid('setGridParam', {
+            $("#sysScheduleLogGrid").jqGrid('setGridParam', {
                 postData: {'jobId': vm.q.jobId},
                 page: 1
             }).trigger("reloadGrid");

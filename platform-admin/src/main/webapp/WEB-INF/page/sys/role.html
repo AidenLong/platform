@@ -5,7 +5,7 @@
     #parse("sys/header.html")
 </head>
 <body>
-<div id="rrapp" v-cloak>
+<div id="sysRole" v-cloak>
     <div v-show="showList">
         <Row :gutter="16">
             <div class="search-group">
@@ -27,7 +27,7 @@
                 #end
             </div>
         </Row>
-        <table id="jqGrid"></table>
+        <table id="sysRoleGrid"></table>
     </div>
 
     <Card v-show="!showList">
@@ -38,7 +38,7 @@
             </Form-item>
             <Form-item label="所属部门" prop="deptName">
                 <i-input type="text" v-model="role.deptName" icon="eye" readonly="readonly"
-                         @on-click="deptTree" readonly="readonly" placeholder="所属部门"/>
+                         @on-click="selectDeptTree" readonly="readonly" placeholder="所属部门"/>
             </Form-item>
             <Form-item label="备注" prop="remark">
                 <i-input type="textarea" v-model="role.remark" placeholder="备注"/>
@@ -63,8 +63,8 @@
 </div>
 
 <!-- 选择部门 -->
-<div id="deptLayer" style="display: none;padding:10px;">
-    <ul id="deptTree" class="ztree"></ul>
+<div id="sysRoleLayer" style="display: none;padding:10px;">
+    <ul id="sysRoleTree" class="ztree"></ul>
 </div>
 
 <script src="${rc.contextPath}/js/sys/role.js?_${date.systemTime}"></script>

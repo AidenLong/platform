@@ -23,7 +23,7 @@ function getGrid() {
 }
 
 var TreeGrid = {
-    id: "jqGrid",
+    id: "sysMenuGrid",
     table: null,
     layerIndex: -1
 };
@@ -97,7 +97,7 @@ var setting = {
 var ztree;
 
 var vm = new Vue({
-    el: '#rrapp',
+    el: '#sysMenu',
     data: {
         showList: true,
         title: null,
@@ -153,7 +153,7 @@ var vm = new Vue({
                 url: "../sys/menu/select",
                 async: true,
                 successCallback: function (r) {
-                    ztree = $.fn.zTree.init($("#menuTree"), setting, r.menuList);
+                    ztree = $.fn.zTree.init($("#sysMenuTree"), setting, r.menuList);
                     var node = ztree.getNodeByParam("menuId", vm.menu.parentId);
                     if (node) {
                         ztree.selectNode(node);
@@ -240,7 +240,7 @@ var vm = new Vue({
             openWindow({
                 title: "选择菜单",
                 area: ['300px', '450px'],
-                content: jQuery("#menuLayer"),
+                content: jQuery("#sysMenuLayer"),
                 btn: ['确定', '取消'],
                 btn1: function (index) {
                     var node = ztree.getSelectedNodes();

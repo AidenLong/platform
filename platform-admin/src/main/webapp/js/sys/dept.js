@@ -23,7 +23,7 @@ function getGrid() {
 }
 
 var TreeGrid = {
-    id: "jqGrid",
+    id: "sysDeptGrid",
     table: null,
     layerIndex: -1
 };
@@ -58,7 +58,7 @@ var setting = {
 var ztree;
 
 var vm = new Vue({
-    el: '#rrapp',
+    el: '#sysDept',
     data: {
         showList: true,
         title: null,
@@ -80,7 +80,7 @@ var vm = new Vue({
                 url: "../sys/dept/select",
                 async: true,
                 successCallback: function (r) {
-                    ztree = $.fn.zTree.init($("#deptTree"), setting, r.deptList);
+                    ztree = $.fn.zTree.init($("#sysDeptTree"), setting, r.deptList);
                     var node = ztree.getNodeByParam("deptId", vm.dept.parentId);
                     if (node) {
                         ztree.selectNode(node);
@@ -158,7 +158,7 @@ var vm = new Vue({
             openWindow({
                 title: "选择部门",
                 area: ['300px', '450px'],
-                content: jQuery("#deptLayer"),
+                content: jQuery("#sysDeptLayer"),
                 btn: ['确定', '取消'],
                 btn1: function (index) {
                     var node = ztree.getSelectedNodes();
@@ -186,7 +186,7 @@ var vm = new Vue({
 });
 
 function getDeptId() {
-    var selected = $('#jqGrid').bootstrapTreeTable('getSelections');
+    var selected = $('#sysDeptGrid').bootstrapTreeTable('getSelections');
     if (selected.length == 0) {
         iview.Message.error("请选择一条记录");
         return false;

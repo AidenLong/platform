@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").Grid({
+    $("#sysLogGrid").Grid({
         url: '../sys/log/list',
         colModel: [
             {label: 'id', name: 'id', key: true, hidden: true},
@@ -18,7 +18,7 @@ $(function () {
 });
 
 var vm = new Vue({
-    el: '#rrapp',
+    el: '#sysLog',
     data: {
         q: {
             key: null
@@ -30,13 +30,13 @@ var vm = new Vue({
             vm.reload();
         },
         reload: function (event) {
-            let page = $("#jqGrid").jqGrid('getGridParam', 'page');
+            let page = $("#sysLogGrid").jqGrid('getGridParam', 'page');
 
             let operation = '';
             if (vm.isLogin && vm.isLogin.length > 0) {
                 operation = vm.isLogin[0];
             }
-            $("#jqGrid").jqGrid('setGridParam', {
+            $("#sysLogGrid").jqGrid('setGridParam', {
                 postData: {'key': vm.q.key, 'operation': operation},
                 page: page
             }).trigger("reloadGrid");
