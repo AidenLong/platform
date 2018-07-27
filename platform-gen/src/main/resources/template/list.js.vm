@@ -1,5 +1,5 @@
 $(function () {
-    $("#jqGrid").jqGrid({
+    $("#jqGrid").Grid({
         url: '../${pathName}/list',
         colModel: [
 #foreach($column in $columns)
@@ -44,7 +44,7 @@ let vm = new Vue({
 			vm.showList = false;
             vm.title = "修改";
 
-            vm.getInfo(${pk.attrname})
+            vm.getInfo(${pk.attrname});
 		},
 		saveOrUpdate: function (event) {
             let url = vm.${classname}.${pk.attrname} == null ? "../${pathName}/save" : "../${pathName}/update";
@@ -101,7 +101,7 @@ let vm = new Vue({
         reloadSearch: function() {
             vm.q = {
                 name: ''
-            }
+            };
             vm.reload();
         },
         handleSubmit: function (name) {
