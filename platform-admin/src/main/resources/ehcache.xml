@@ -56,12 +56,4 @@
            overflowToDisk="false">
     </cache>
 
-    <cache name="shopCache"
-           maxElementsInMemory="5000"
-           eternal="false"
-           timeToIdleSeconds="3000"
-           timeToLiveSeconds="3000"
-           overflowToDisk="false">
-    </cache>
-
 </ehcache>

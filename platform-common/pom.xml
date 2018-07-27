@@ -21,7 +21,6 @@
         <qcloud-cos-version>4.4</qcloud-cos-version>
         <jackson.version>2.5.0</jackson.version>
         <poi.version>3.15</poi.version>
-        <ehcache.version>2.10.2</ehcache.version>
     </properties>
 
     <dependencies>
@@ -129,6 +128,16 @@
             <groupId>net.oschina.j2cache</groupId>
             <artifactId>j2cache-core</artifactId>
             <version>${j2cache.version}</version>
+        </dependency>
+        <dependency><!-- Ehcache 2.x //-->
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>${ehcache.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jgroups</groupId>
+            <artifactId>jgroups</artifactId>
+            <version>${jgroups.version}</version>
         </dependency>
     </dependencies>
 </project>
