@@ -19,6 +19,16 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ccd0d22c80e2ce6d344df40fbe550fbf";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
 </head>
 <!-- ADD THE CLASS layout-boxed TO GET A BOXED LAYOUT -->
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
@@ -290,13 +300,14 @@
                 });
             },
             love: function () {
-                openWindow({
-                    type: 2,
-                    title: '支持开源',
-                    area: ['806px', '467px'],
-                    closeBtn: 2,
-                    content: ['statics/img/love.jpg', 'no']
-                });
+                setTimeout(function () {
+                    openWindow({
+                        type: 2,
+                        title: '领取阿里云代金券',
+                        closeBtn: 2,
+                        content: ['https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=i8s6n64p']
+                    });
+                }, 3000)
             }
         },
         created: function () {
